@@ -2,11 +2,16 @@ module Api
   class DrinksRecommendController < ApplicationController
 
     def index
-      init_pages = 0;
-      if params[:pages].present?
-        init_pages = (params[:pages].to_i * 10) - 10;
-      end
+      init_pages = DrinksHelper.format_pages(params[:pages]);
+      where = set_where
 
+      count = Drink.where(where).count();
+      drinks = Drink.where(where).order(:name).offset(init_pages).limit(10)
+
+      render json: {status: 'SUCCESS', message:'List drinks', data:drinks, pages: count},status: :ok
+    end
+
+    def set_where
       alcohol_level = '1'
 
       if params[:alcohol_level].present?
@@ -30,11 +35,7 @@ module Api
         where[0] += " and origin = ? "
         where.push(params[:origin])
       end
-
-      count = Drink.where(where).count();
-      drinks = Drink.where(where).order(:name).offset(init_pages).limit(10)
-
-      render json: {status: 'SUCCESS', message:'List drinks', data:drinks, pages: count},status: :ok
+      where
     end
 
     private

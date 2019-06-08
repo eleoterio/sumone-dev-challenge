@@ -8,4 +8,11 @@ module DrinksHelper
     Drink.select(:origin).group(:origin).order(:origin)
   end
 
+  def self.format_pages(pages)
+    itit_pages = 0
+    if pages.present?
+      init_pages = (pages.to_i * 10) - 10;
+    end
+  end
+
 end
