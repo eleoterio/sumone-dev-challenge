@@ -19,10 +19,10 @@
     <%= form_tag do %>
       <div class="simple-form">
         <div class="simple-form__input">
-          <input class="form-control form-control-lg" type="text" placeholder="Try a Martini..">
+          <input class="form-control form-control-lg" type="text" id="name" placeholder="Try a Martini..">
         </div>
         <div class="simple-form__btn">
-          <button type="button" class="btn btn-outline-primary btn-lg">Search</button>
+          <button type="button" class="btn btn-outline-primary btn-lg btn_request">Search</button>
         </div>
       </div>
 
@@ -59,7 +59,7 @@
   				</select>
         </div>
         <div class="advanced-form__btn" style="padding-top: 10px;">
-          <button type="button" id="btn_recommend" class="btn btn-outline-primary btn-lg">Recommend me </button>
+          <button type="button" class="btn btn-outline-primary btn-lg btn_request">Recommend me </button>
         </div>
       </div>
     <% end %>
