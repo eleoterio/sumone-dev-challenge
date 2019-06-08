@@ -22,12 +22,45 @@
           <input class="form-control form-control-lg" type="text" placeholder="Try a Martini..">
         </div>
         <div class="simple-form__btn">
-          <button type="submit" class="btn btn-outline-primary btn-lg">Search</button>
+          <button type="button" class="btn btn-outline-primary btn-lg">Search</button>
         </div>
       </div>
 
       <div class="advanced-form" style="display:none;">
-        User inputs to search a collection of drinks based on given recommendations.
+				User inputs to search a collection of drinks based on given recommendations.
+        <div class="advanced-form__input">
+          <label>Min Alcohol Levels: </label>
+          <input class="form-control" type="number" min="0" id="alcohol_level"/>
+        </div>
+        <div class="advanced-form__input">
+          <label>Distilled: </label>
+          <select class="form-control" id="distilled" >
+            <option value="" ></option>
+            <option value="true" >Yes</option>
+            <option value="false" >No</option>
+          </select>
+        </div>
+        <div class="advanced-form__input">
+  				<label>Origin: </label>
+  				<select class="form-control" id="origin" >
+            <option value="" ></option>
+  					<% @origins.each do |origin| %>
+  						<option value="<%= origin.origin%>" ><%= origin.origin %></option>
+  					<% end %>
+  				</select>
+        </div>
+        <div class="advanced-form__input">
+  				<label>Base Ingredients: </label>
+  				<select class="form-control" id="base_ingredients">
+            <option value="" ></option>
+  					<% @base_ingredients.each do |base_ingredient| %>
+  						<option value="<%= base_ingredient.base_ingredient %>" ><%= base_ingredient.base_ingredient %></option>
+  					<% end %>
+  				</select>
+        </div>
+        <div class="advanced-form__btn" style="padding-top: 10px;">
+          <button type="button" id="btn_recommend" class="btn btn-outline-primary btn-lg">Recommend me </button>
+        </div>
       </div>
     <% end %>
   </div>
