@@ -60,7 +60,7 @@ function request_api(params){
 }
 
 function reload_pagination(total){
-  qtd = total / 10;
+  qtd = Math.ceil(total / 10);
 
   if (qtd < 1) {
     qtd = 1
