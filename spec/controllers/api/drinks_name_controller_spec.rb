@@ -20,13 +20,9 @@ describe Api::DrinksNameController, :type => :request do
       name_test = "teste"
       get "/api/drinks_name", :params => { :name => name_test }
       json_return = JSON.parse response.body
-      count = Drink.where([" name ilike ? ", "%#{name_test}%"]).count();
-      drinks = Drink.where([" name ilike ? ", "%#{name_test}%"]).order(:name).offset(0).limit(10).to_a
 
-      expect(json_return['message']).to eq("List drinks")
-      expect(json_return['status']).to eq("SUCCESS")
-      expect(json_return['data']).to eq(drinks)
-      expect(json_return['pages']).to eq(count)
+      expect(json_return['data']).to eq([])
+      expect(json_return['pages']).to eq(0)
     end
 
   end
