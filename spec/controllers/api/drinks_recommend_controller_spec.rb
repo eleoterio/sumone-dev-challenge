@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Api::DrinksRecommendController do
   describe 'GET API Recommend index' do
-    subject { drink }
 
     let(:drink) { FactoryBot.build :drink }
     it "get index api drink Recommend" do
