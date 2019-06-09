@@ -5,6 +5,7 @@ describe DrinksHelper do
     subject { drink }
 
     let(:drink) { FactoryBot.build :drink }
+
     it "method format_pages 0" do
       pages = DrinksHelper.format_pages(1)
       expect(pages).to eq(0)

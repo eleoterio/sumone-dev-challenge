@@ -6,5 +6,8 @@ class DrinksController < ApplicationController
     @qtd_pages = count / 10
     @origins = DrinksHelper.origin
     @base_ingredients = DrinksHelper.base_ingredient
+    if @qtd_pages.to_i < 0
+      @qtd_pages = 0;
+    end
   end
 end
