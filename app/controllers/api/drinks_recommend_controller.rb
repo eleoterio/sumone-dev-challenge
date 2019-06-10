@@ -43,9 +43,8 @@ module Api
       end
 
       if params[:base_ingredient].present?
-        where[0] += " and base_ingredient ilike ? "
+        where[0] += " and (base_ingredient ilike ? or description ilike ? ) "
         where.push("%#{params[:base_ingredient]}%")
-        where[0] += " or description ilike ? "
         where.push("%#{params[:base_ingredient]}%")
       end
 
