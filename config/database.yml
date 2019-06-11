@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  url: "postgres://qsgyvphfydnvax:50cae55c5c48412b1feed9611494006bd9ef04754a6e41ab65a6c79c76697c36@ec2-23-21-129-125.compute-1.amazonaws.com:5432/d4ls1rjbvns3p9"
+  url: <%= ENV["DATABASE_URL"] %>
 #  database: sumone-dev-challange_production
 #  username: sumone-dev-challange
 #  password: <%= ENV['SUMONE-DEV-CHALLANGE_DATABASE_PASSWORD'] %>
