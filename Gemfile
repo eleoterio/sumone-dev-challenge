@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-jquery'
+  gem 'rails-assets-tether'
 end
 
 group :development, :test do

@@ -236,6 +236,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-assets-bootstrap!
   rails-assets-jquery!
+  rails-assets-tether!
   rails-controller-testing
   react-rails
   rspec-rails (~> 3.7)
